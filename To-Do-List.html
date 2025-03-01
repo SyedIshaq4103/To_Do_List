@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>To-Do List project</title>
+    <!-- Importing Google Fonts:"Inter" for a clean and modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Importing fontawsome for used emojis -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="To-Do-List.css">
+  <!-- /* link for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-container"> <!--main container -->
+    <div id="header-section">
+      <h1>Bucket List </h1>
+    </div>
+    
+    <div id="task-form">
+      <input type="text" id="task-input" placeholder="Enter your task to achieve" />
+      <button id="add-task-button" onclick="addNewTask()">Task</button>
+    </div>
+    <ul id="task-list"></ul>
+    <hr />
+    <div class="task-counter">
+      Completed: <span id="completed-task-count">0</span> | Uncompleted: <span id="uncompleted-task-count">0</span><!-- counter section-->
+    </div>
+    <p id="congrats-message" style="display: none;"> Congratulations! You have completed a task.</p><!--final congrats message-->
+  </div>
+  <div id="note-icon">
+    <i class="fa-solid fa-note-sticky"></i>
+  </div>
+<div  ><p id="note-content" > <b>This is a daily planner which is effective for people to keep track of their tasks.</b></p></div>
+  <script src="To-Do-List.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* Global style*/
+body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(to right, rgb(224, 161, 187), rgb(233, 112, 163));
+    /* background color */
+    color:black ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 500vh;
+    margin: 25%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+#note-content{
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        height: 200px;
+        width:200px;
+        position:absolute ;
+}
+#note-icon{
+    content: "\f249";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #eeeeee; /* white color */
+    margin-right: 5px;
+    font-size: 50px;
+    margin-left:25%; 
+    position: relative;
+    /* display: inline-block; */
+    
+}
+#note-content p{
+    bottom:auto;
+    z-index: 4;
+}
+
+/* main container */
+#main-container {
+    background-image: linear-gradient(to right, rgb(224, 161, 187), rgb(233, 112, 163));
+    /* background color */
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: -5px -5px 250px rgb(255, 255, 255);
+    border: 1px solid #E2DED7;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+#task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* /for the input box/ */
+#task-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #F2F0EB;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* input button styling */
+#add-task-button {
+    padding: 10px 15px;
+    background: #ad0eec;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* /on-hover changes/ */
+#add-task-button:hover {
+    background: #FFC107;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* /style for the tasks added/ */
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* /for the task contents/ */
+.task-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* /for the task text/ */
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* /task checkbox styling/ */
+.task-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.task-checkbox:checked {
+    background-color: #a572f7;
+}
+
+#congrats-message {
+    color: white;
+}
+
+/* /animation for the thumbs-up/ */
+.completed .task-text::before {
+    content: "\f164";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #1ed51e; /* Green color */
+    margin-right: 5px;
+    display: inline-block;
+    animation: popIn 0.3s ease-in-out;
+}
+
+.task-counter {
+    color: white;
+}
+
+/* /frames animation/ */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* for edit and delete buttons */
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-task-btn,
+.delete-task-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Full responsiveness for all handsets
+  /for tablets and phones/ */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    #main-container {
+        width: 100%;
+        padding: 15px;
+        box-shadow: none;
+        border: none;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #task-form {
+        flex-direction: column;
+    }
+
+    #task-input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #add-task-button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-details {
+        width: 100%;
+    }
+
+    .task-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* /for smaller phones/ */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    #task-input {
+        font-size: 14px;
+    }
+
+    #add-task-button {
+        font-size: 14px;
+    }
+
+    .task-item {
+        padding: 10px;
+    }
+}
+
+/* /for large phones/ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #main-container {
+        max-width: 500px;
+    }
+}
